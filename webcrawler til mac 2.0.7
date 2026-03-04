@@ -1,0 +1,16 @@
+name: Build macOS App
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install pyinstaller
+      - run: pyinstaller --windowed --onefile "Webcrawler GUI v2.0.8 med video.py"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MacOS-App
+          path: dist/
