@@ -9,7 +9,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install pyinstaller
-      - run: pyinstaller --windowed --onefile "Webcrawler GUI v2.0.8 med video.py"
+      - run: pyinstaller --windowed --onefile "Webcrawler GUI v.2.0.8 med video.py"
       - uses: actions/upload-artifact@v4
         with:
           name: MacOS-App
